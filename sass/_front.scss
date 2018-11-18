@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+/* -------------------------------
+-------------------------------
+
+  Top Page
+
+-------------------------------
+-------------------------------- */
+.main-vusual-sec {
+  position: relative;
+  height: 90vh;
+  background: url(image/image01.png) no-repeat center center;
+  background-size: cover;
+}
+
+.main-vusual-text-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 150px;
+  margin: auto;
+  color: #fff;
+  background-color: #555; 
+  vertical-align: middle;
+}
+

@@ -1,0 +1,157 @@
+@charset "utf-8";
+/* Scss Document */
+
+/* ---------------------------
+ * utility   aaa
+----------------------------- */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: inherit;
+}
+
+a:hover {
+	opacity: 0.7;
+}
+
+.hover-none:hover {
+  opacity: inherit;
+  text-decoration: none;
+}
+
+
+/* list*/
+ul,ol {
+	padding: 0 0 0 1.4em;
+}
+
+
+/* Font */
+@font-face {
+ font-family: 'Noto Sans Japanese';
+ font-style: normal;
+ font-weight: 400;
+ src: local('NotoSansJP-Regular.otf'),
+      url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.woff2) format('woff2'),
+      url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.woff) format('woff'),
+      url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.otf) format('opentype');
+ }
+
+@font-face {
+   font-family: 'Noto Sans Japanese';
+   font-style: normal;
+   font-weight: 900;
+   src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.woff2) format('woff2'),
+        url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.woff) format('woff'),
+        url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.otf) format('opentype');
+ }
+
+
+.font-size14 {
+	font-size: 14px
+}
+
+.font-size16 {
+	font-size: 16px
+}
+
+
+/* color */
+$yellow: #FFE100;
+
+$white: #fff !important;
+
+.white {
+	color: $white;
+}
+
+.bg-yellow {
+	background-color: $yellow;
+}
+
+
+/* ブレークポイント */
+$width-iphoneSE: 359px; //Extra Small
+$width-ex: 575px; //Extra Small
+$width-sm: 576px; //Small
+$width-md: 768px; //Medium
+$width-md-less: 767px;
+$width-lg: 992px; //Large
+$width-xl: 1200px; //Extra Large
+
+$width-425: 425px; //Extra Small
+
+
+
+@mixin sm {
+  @media screen and (max-width: ($width-sm)) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media screen and (max-width: ($width-md)) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media screen and (max-width: ($width-lg)) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media screen and (max-width: ($width-xl)) {
+    @content;
+  }
+}
+
+@mixin xl-min {
+  @media screen and (min-width: ($width-xl)) {
+    @content;
+  }
+}
+
+@mixin iphoneSE {
+  @media screen and (max-width: ($width-iphoneSE)) {
+    @content;
+  }
+}
+
+/* その他 */
+@mixin sm-other {
+  @media screen and (max-width: ($width-425)) {
+    @content;
+  }
+}
+
+@mixin md-less {
+  @media screen and (max-width: ($width-md-less)) {
+    @content;
+  }
+}
+
+
+/* 画像の設定 */
+.aligncenter {
+	display: block;
+	margin: 30px auto 30px auto;
+}
+
+.alignleft {
+	float: left;
+	margin: 8px 20px 8px auto;
+}
+
+.alignright {
+	float: right;
+	margin: 8px auto 8px 20px;
+}
+
+article img, .wp-caption {
+	max-width: 100%;
+	height: auto;
+}

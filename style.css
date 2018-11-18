@@ -1,0 +1,438 @@
+@charset "UTF-8";
+/* Scss Document */
+/* Scss Document */
+/* ---------------------------
+ * utility   aaa
+----------------------------- */
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: inherit;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+.hover-none:hover {
+  opacity: inherit;
+  text-decoration: none;
+}
+
+/* list*/
+ul, ol {
+  padding: 0 0 0 1.4em;
+}
+
+/* Font */
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 400;
+  src: local("NotoSansJP-Regular.otf"), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.woff2) format("woff2"), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.woff) format("woff"), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Regular.otf) format("opentype");
+}
+
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.woff2) format("woff2"), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.woff) format("woff"), url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-Black.otf) format("opentype");
+}
+
+.font-size14 {
+  font-size: 14px;
+}
+
+.font-size16 {
+  font-size: 16px;
+}
+
+/* color */
+.white {
+  color: #fff !important;
+}
+
+.bg-yellow {
+  background-color: #FFE100;
+}
+
+/* ブレークポイント */
+/* その他 */
+/* 画像の設定 */
+.aligncenter {
+  display: block;
+  margin: 30px auto 30px auto;
+}
+
+.alignleft {
+  float: left;
+  margin: 8px 20px 8px auto;
+}
+
+.alignright {
+  float: right;
+  margin: 8px auto 8px 20px;
+}
+
+article img, .wp-caption {
+  max-width: 100%;
+  height: auto;
+}
+
+/* -------------------------------
+   -------------------------------
+
+  Layout
+
+--------------------------------
+-------------------------------- */
+body {
+  color: #111;
+  background-color: #fff;
+  font-size: 16px;
+  font-family: "Yu Gothic Medium", "游ゴシック Medium", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+  font-weight: 500;
+  line-height: 1.8;
+}
+
+/* トップページ、固定ページ、ブログページのコンテンツ部分 */
+.front-page-area,
+.page-area,
+.blog-area {
+  min-height: 90vh;
+  margin-top: 55px;
+  /* ヘッダーを固定にしたため設定 */
+}
+
+.width1900 {
+  max-width: 1900px;
+}
+
+/* -------------------------------
+-------------------------------
+
+  Header
+
+-------------------------------
+-------------------------------- */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin-top: 8px;
+  z-index: 777;
+  background-color: #fff;
+}
+
+header .container-fluid {
+  overflow: auto;
+}
+
+header::after {
+  clear: both;
+  display: block;
+  content: "";
+}
+
+.header-brand {
+  float: left;
+  width: 270px;
+  padding-top: 8px;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+@media screen and (max-width: 359px) {
+  .header-brand {
+    width: 245px;
+  }
+}
+
+.header-telAndContact-wrap {
+  float: right;
+}
+
+/* -------------------------------
+-------------------------------
+
+  Navigation
+
+-------------------------------
+-------------------------------- */
+.nav-overlay {
+  display: none;
+}
+
+.header-nav-menu-wrap {
+  display: none;
+}
+
+.header-nav-pc {
+  float: left;
+  width: 500x;
+}
+
+.header-nav-pc ul {
+  margin: 0;
+  padding: 0;
+}
+
+.header-nav-pc ul li {
+  display: inline-block;
+}
+
+.header-nav-pc ul li a {
+  display: block;
+  padding: 5px 10px;
+}
+
+.header-nav-pc ul li a:hover {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 767px) {
+  #nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0;
+    z-index: 888;
+  }
+  .header-nav-menu-wrap {
+    display: block;
+    position: fixed;
+    top: 6px;
+    right: 10px;
+    width: 60px;
+    height: 40px;
+    line-height: 1;
+    text-align: center;
+    z-index: 900;
+  }
+  .haeder-nav-switchBtn {
+    width: 50px;
+    height: 50px;
+    background: url(image/btnOpen.png) no-repeat 0 0;
+  }
+  #haeder-nav-switchBtn.btnclose {
+    background: url(image/btnClose.png) no-repeat 0 0;
+  }
+  .header-nav-pc {
+    float: none;
+    position: fixed;
+    top: 53px;
+    right: -250px;
+    width: 250px;
+    margin: 0;
+    padding: 20px 0;
+    background-color: #333;
+    z-index: 900;
+  }
+  .header-nav-pc ul {
+    margin: 0;
+    padding: 0;
+  }
+  .header-nav-pc ul li {
+    display: block;
+  }
+  .header-nav-pc ul li a {
+    display: block;
+    padding: 10px 15px;
+  }
+  .header-nav-pc ul li a:hover {
+    text-decoration: none;
+  }
+}
+
+.header-contact-wrap {
+  float: left;
+  width: 130px;
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  background-color: #FFE100;
+  text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  .header-contact-wrap {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .header-contact-wrap {
+    width: 49%;
+    font-size: 14px;
+  }
+}
+
+.header-contact-wrap a {
+  color: #231815;
+  letter-spacing: -0.5px;
+}
+
+/* -------------------------------
+-------------------------------
+
+  Footer
+
+-------------------------------
+-------------------------------- */
+footer .footer1-outer {
+  padding: 30px 0 30px 0;
+  color: #fff;
+  background-color: #555;
+  font-size: 14px;
+}
+
+footer .footer2-outer {
+  padding: 10px 0 10px 0;
+  color: #fff;
+  background-color: #333;
+  font-size: 14px;
+}
+
+footer h2 {
+  font-size: 16px;
+}
+
+footer .footer-navi {
+  list-style-type: none;
+  padding: 0;
+}
+
+footer li ul {
+  list-style-type: disc;
+}
+
+/* -------------------------------
+-------------------------------
+
+  404ページ
+
+-------------------------------
+-------------------------------- */
+.page404 {
+  height: 80vh;
+}
+
+.page404 a {
+  color: inherit;
+}
+
+/* -------------------------------
+-------------------------------
+
+  Top Page
+
+-------------------------------
+-------------------------------- */
+.main-vusual-sec {
+  position: relative;
+  height: 90vh;
+  background: url(image/image01.png) no-repeat center center;
+  background-size: cover;
+}
+
+.main-vusual-text-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 150px;
+  margin: auto;
+  color: #fff;
+  background-color: #555;
+  vertical-align: middle;
+}
+
+/* -------------------------------
+   -------------------------------
+
+  Page
+
+--------------------------------
+-------------------------------- */
+/* ---------------------------
+ * blog
+----------------------------- */
+.post-info {
+  padding: 0.3em 0em;
+  color: #777;
+  font-size: 0.85em;
+  line-height: 1.3;
+}
+
+.post-info a {
+  text-decoration: none;
+}
+
+/* nav-link*/
+.navlink {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0 30px 0;
+}
+
+.navlink i {
+  position: relative;
+  top: 5px;
+}
+
+.navlink a {
+  text-decoration: none;
+}
+
+/* ---------------------------
+ * Sidebar
+----------------------------- */
+.sidebar-wrap ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar-wrap ul .widget h2 {
+  margin: 0;
+  padding: 10px;
+  color: #fff;
+  background-color: #777;
+  font-size: .9em;
+}
+
+.sidebar-wrap ul .widget ul {
+  padding: 0;
+  font-size: .9rem;
+}
+
+.sidebar-wrap ul .widget ul li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.sidebar-wrap ul .widget ul li:last-child {
+  border-bottom: none;
+}
+
+.sidebar-wrap ul .widget ul li a {
+  color: inherit;
+}
+
+.sidebar-wrap ul .widget .screen-reader-text {
+  display: none;
+}
+
+.sidebar-wrap ul .widget_search {
+  margin-bottom: 20px;
+  border: none;
+}
+
+.single-content {
+  min-height: 70vh;
+}
