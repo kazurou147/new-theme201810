@@ -2,98 +2,107 @@
 
 <main role="main" class="blog-area">
 
-  <!-- ループ開始 -->
-  <div class="container blog-wrap">
-    <div class="row">
+    <!-- ループ開始 -->
+    <div class="container blog-wrap">
+        <div class="row">
 
-      <div class="col-12 col-lg-9 blog-posts-wrap">
+            <div class="col-12 col-lg-9 blog-posts-wrap">
 
-        <h1 class="">記事一覧</h1>
+                <h1 class="">
 
-        <?php if(have_posts()):while(have_posts()):the_post(); ?>
+                    <!-- Blog固定ページのタイトルの出力 -->
+                    <?php
+                    $post_8 = get_post( 8 ); 
+                    $title = $post_8->post_title;
+                    echo $title;
+                    ?>
 
-        <article <?php post_class(); ?>>
+                </h1>
 
-          <div class="row">
-            <div class="col-12 col-sm-4 mb-3">
+                <?php if(have_posts()):while(have_posts()):the_post(); ?>
 
-              <!-- アイキャッチ画像 -->
-              <a href="<?php echo get_permalink(); ?>">
-                <div class="thumbnail">
-                  <?php if( has_post_thumbnail() ): ?>
+                <article <?php post_class(); ?>>
 
-                  <?php the_post_thumbnail(array(333,208)); ?>
+                    <div class="row">
+                        <div class="col-12 col-sm-4 mb-3">
 
-                  <?php else: ?>
+                            <!-- アイキャッチ画像 -->
+                            <a href="<?php echo get_permalink(); ?>">
+                                <div class="thumbnail">
+                                    <?php if( has_post_thumbnail() ): ?>
 
-                  <?php preg_match( '/wp-image-(\d+)/s', $post ->post_content, $thumb ); ?>
+                                    <?php the_post_thumbnail(array(333,208)); ?>
 
-                  <?php if ( $thumb ): ?>
-                  <?php echo wp_get_attachment_image( $thumb[1], array(333,333) ); ?>
+                                    <?php else: ?>
 
-                  <?php else: ?>
-                  <img src="<?php echo get_template_directory_uri(); ?>/image/image01.png" alt="">
+                                    <?php preg_match( '/wp-image-(\d+)/s', $post ->post_content, $thumb ); ?>
 
-                  <?php endif; ?>
+                                    <?php if ( $thumb ): ?>
+                                    <?php echo wp_get_attachment_image( $thumb[1], array(333,333) ); ?>
 
-                  <?php endif; ?>
-                </div>
-              </a>
-            </div>
+                                    <?php else: ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/image/image01.png" alt="">
 
+                                    <?php endif; ?>
 
-            <div class="col-12 col-sm-8 mb-3">
-
-              <a class="" href="<?php echo get_permalink(); ?>">
-                <h2 class="">
-                  <?php the_title(); ?>
-                </h2>
-              </a>
-              <div class="post-info">
-                <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<time datetime="<?php echo get_the_date('c'); ?>"></time>
-                <?php echo get_the_date(); ?>&nbsp;&nbsp;<i class="fa fa-folder-o" aria-hidden="true"></i>&nbsp;
-                <?php the_category(' , '); ?>
-              </div>
-
-              <?php the_excerpt(); ?>
-
-            </div>
-          </div>
-
-        </article>
+                                    <?php endif; ?>
+                                </div>
+                            </a>
+                        </div>
 
 
-        <?php endwhile; ?>
-        <?php endif; ?>
+                        <div class="col-12 col-sm-8 mb-3">
+
+                            <a class="" href="<?php echo get_permalink(); ?>">
+                                <h2 class="">
+                                    <?php the_title(); ?>
+                                </h2>
+                            </a>
+                            <div class="post-info">
+                                <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<time datetime="<?php echo get_the_date('c'); ?>"></time>
+                                <?php echo get_the_date(); ?>&nbsp;&nbsp;<i class="fa fa-folder-o" aria-hidden="true"></i>&nbsp;
+                                <?php the_category(' , '); ?>
+                            </div>
+
+                            <?php the_excerpt(); ?>
+
+                        </div>
+                    </div>
+
+                </article>
 
 
-        <div class="navlink">
+                <?php endwhile; ?>
+                <?php endif; ?>
 
-          <span class="navlink-next">
+
+                <div class="navlink">
+
+                    <span class="navlink-next">
 						<?php if (get_next_posts_link()): ?>
 
 							<?php next_posts_link('<i class="fa fa-chevron-circle-left fa-2x" aria-hidden="true"></i>&nbsp;古い記事'); ?>
 						<?php endif; ?>
 					</span>
 
-          <span class="navlink-prev">
+                    <span class="navlink-prev">
 						<?php if (get_previous_posts_link()): ?>
 							<?php previous_posts_link('新しい記事&nbsp;<i class="fa fa-chevron-circle-right fa-2x" aria-hidden="true"></i>'); ?>
 						<?php endif; ?>
 					</span>
 
+                </div>
+
+            </div>
+
+
+            <div class="col-12 col-lg-3 sidebar-wrap">
+                <?php get_sidebar(); ?>
+            </div>
         </div>
-
-      </div>
-
-
-      <div class="col-12 col-lg-3 sidebar-wrap">
-        <?php get_sidebar(); ?>
-      </div>
+        <!-- row -->
     </div>
-    <!-- row -->
-  </div>
-  <!-- container blog-wrap -->
+    <!-- container blog-wrap -->
 </main>
 
 <?php get_footer(); ?>

@@ -24,10 +24,10 @@
 	  <header>
 		<div class="container-fluid width1900">
 
-		  <h3 class="header-brand"><a class="hover-none" href="<?php echo home_url(); ?>"><?php bloginfo( 'name' );  ?></a>
-		  </h3>
+		  <div class="header-brand"><a class="hover-none" href="<?php echo home_url(); ?>"><?php bloginfo( 'name' );  ?></a>
+		  </div>
 
-		  <div class="header-telAndContact-wrap">
+		  <div class="header-right-wrap">
 	  	  	  <div class="nav-overlay" id="nav-overlay"></div>
 		  	  <div class="header-nav-menu-wrap">
 		  	  	<div class="haeder-nav-switchBtn" id="haeder-nav-switchBtn"></div>
